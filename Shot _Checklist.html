@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html>
+<header>
+  <link rel="stylesheet" href="./shot_checklist.css" />
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+</header>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+<body ng-app="">
+
+  <h2> Shot Checklist </h2>
+  <form>
+    <table name = "scene_shot_num" style="width:100%">
+      <tr>
+        <td>
+          <label type="text"><b>Scene Number#:</b></label><br>
+        </td>
+        <td>
+          <input type="text" id="username" name="username"><br>
+        </td>
+        <td>
+          <label for="pwd"><b>Shot Number#:</b></label><br>
+        </td>
+        <td>
+          <input><br><br>
+        </td>
+      </tr>
+      </table>
+        <table style="width:100%">
+          <label class="custom-select">
+          <tr>
+            <th>Checklist Items</th>
+            <th>Selection</th>
+            <th>When to use?</th>
+          </tr>
+          <tr>
+            <td>
+              <h4> 1. Camera Angles:</h4>
+            </td>
+            <td>
+              <label class="custom-select">
+              <select class="select" ng-model="CameraAngles">
+                <option class="option" value="">
+                <option class="option" value="eyeLevel">Eye Level
+                <option class="option" value="lowAngle">Low Angle
+                <option class="option" value="highAngle">High Angle
+              </select>
+              </label>
+            </td>
+            <td>
+              <div ng-switch="CameraAngles">
+                <div ng-switch-when="eyeLevel">
+                  <ul>
+                    <li>Eye Level:1</li>
+                    <li>Eye Level:2</li>
+                    <li>Eye Level:3</li>
+                  </ul>
+                </div>
+                <div ng-switch-when="lowAngle">
+                  <ul>
+                    <li>Low Angle:1</li>
+                    <li>Low Angle:2</li>
+                    <li>Low Angle:3</li>
+                  </ul>
+                </div>
+                <div ng-switch-when="highAngle">
+                  <ul>
+                    <li>High Angle:1</li>
+                    <li>High Angle:2</li>
+                    <li>High Angle:3</li>
+                  </ul>
+                </div>
+              </div>
+            </td>
+          <tr>
+            <td>
+              <h4> 2. Subject Movement:</h4>
+            </td>
+            <td>
+              <label class="custom-select">
+              <select class="select" ng-model="subjectMovement">
+                <option class="option" value="">
+                <option class="option" value="noSubMov">No movement
+                <option class="option" value="movingSubCloser">Moving Closer
+                <option class="option" value="movingSubAway">Moving Away
+              </select>
+            </label>
+            </td>
+            <td>
+              <div ng-switch="subjectMovement">
+                <div ng-switch-when="noSubMov">
+                  <ul>
+                    <li>No movement</li>
+                    <li>No movement</li>
+                    <li>No movement</li>
+                  </ul>
+                </div>
+                <div ng-switch-when="movingSubCloser">
+                  <ul>
+                    <li>Subject moving closer</li>
+                    <li>Subject moving closer</li>
+                    <li>Subject moving closer</li>
+                  </ul>
+                </div>
+                <div ng-switch-when="movingSubAway">
+                  <ul>
+                    <li>Subject moving Away</li>
+                    <li>Subject moving Away</li>
+                    <li>Subject moving Away</li>
+                  </ul>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <h4> 3. Camera Movement:</h4>
+            </td>
+            <td>
+              <label class="custom-select">
+              <select class="select" ng-model="cameraMovement">
+                <option class="option" value="">
+                <option class="option" value="CameraMovement_NoMovement">No movement
+                <option class="option" value="CameraMovement_Pan">Pan
+                <option class="option" value="CameraMovement_Tilt">Tilt
+                <option class="option" value="CameraMovement_Track">Track
+                <option class="option" value="CameraMovement_PushIn">Push In
+                <option class="option" value="CameraMovement_PullOut">Pull out
+                <option class="option" value="CameraMovement_ZoomIn">Zoom In
+                <option class="option" value="CameraMovement_ZoomOut">Zoom Out
+                <option class="option" value="CameraMovement_CraneDown">Crain shot looking down
+                <option class="option" value="CameraMovement_CraneUp">Crain shot looking up
+                <option class="option" value="CameraMovement_HandHeld">Hand Held
+                <option class="option" value="CameraMovement_Tripod">Tridpod
+              </select>
+            </label>
+            </td>
+            <td>
+              <div ng-switch="cameraMovement">
+                <div ng-switch-when="CameraMovement_NoMovement">
+                  <ul>
+                    <li>No movement</li>
+                    <li>No movement</li>
+                    <li>No movement</li>
+                  </ul>
+                </div>
+                <div ng-switch-when="CameraMovement_Pan">
+                  <ul>
+                    <li>Subject moving closer</li>
+                    <li>Subject moving closer</li>
+                    <li>Subject moving closer</li>
+                  </ul>
+                </div>
+                <div ng-switch-when="CameraMovement_Tilt">
+                  <ul>
+                    <li>Subject moving Away</li>
+                    <li>Subject moving Away</li>
+                    <li>Subject moving Away</li>
+                  </ul>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <h4> 4. Is foreground,background,middle ground there?:</h4>
+            </td>
+            <td>
+              <label class="custom-select">
+              <select class="select" ng-model="isForeGroundBackMiddleGround">
+                <option class="option" value="">
+                <option class="option" value="isForeGroundBackMiddleGround_Yes">Yes
+                <option class="option" value="isForeGroundBackMiddleGround_No">No
+              </select>
+            </label>
+            </td>
+            <td>
+              <div ng-switch="isForeGroundBackMiddleGround">
+                <div ng-switch-when="isForeGroundBackMiddleGround_Yes">
+                  <ul>
+                    <li>3 dimentionality is achieved</li>
+                  </ul>
+                </div>
+                <div ng-switch-when="isForeGroundBackMiddleGround_No">
+                  <ul>
+                    <li>Flat Image</li>
+                  </ul>
+                </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <h4> 5. Shot Types:</h4>
+            </td>
+            <td>
+              <label class="custom-select">
+              <select class="select" ng-model="shotTypes">
+                <option class="option" value="">
+                <option class="option" value="shotTypes_ExtremeWideShot">Extreme WideShot
+                <option class="option" value="CameraMovement_Pan">Wide shot
+                <option class="option" value="CameraMovement_Tilt">Full Shot
+                <option class="option" value="CameraMovement_Tilt">Medium Shot
+                <option class="option" value="CameraMovement_Tilt">Medium close up
+                <option class="option" value="CameraMovement_Tilt">Close up
+                <option class="option" value="CameraMovement_Tilt">Extreme close up
+                <option class="option" value="CameraMovement_Tilt">Cut In
+                <option class="option" value="CameraMovement_Tilt">Cut Away
+                <option class="option" value="CameraMovement_Tilt">POV shot
+                <option class="option" value="CameraMovement_Tilt">Single shot
+                <option class="option" value="CameraMovement_Tilt">Two shot
+                <option class="option" value="CameraMovement_Tilt">Over the shouder
+                <option class="option" value="CameraMovement_Tilt">Close Over the shoulder
+                <option class="option" value="CameraMovement_Tilt">Establishing shot
+                <option class="option" value="CameraMovement_Tilt">Master shot
+              </select>
+            </label>
+            </td>
+            <td>
+              <div ng-switch="cameraMovement">
+                <div ng-switch-when="CameraMovement_NoMovement">
+                  <ul>
+                    <li>No movement</li>
+                    <li>No movement</li>
+                    <li>No movement</li>
+                  </ul>
+                </div>
+                <div ng-switch-when="CameraMovement_Pan">
+                  <ul>
+                    <li>Subject moving closer</li>
+                    <li>Subject moving closer</li>
+                    <li>Subject moving closer</li>
+                  </ul>
+                </div>
+                <div ng-switch-when="CameraMovement_Tilt">
+                  <ul>
+                    <li>Subject moving Away</li>
+                    <li>Subject moving Away</li>
+                    <li>Subject moving Away</li>
+                  </ul>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <h4> 6. Cuts & Transitions:</h4>
+            </td>
+            <td>
+              <label class="custom-select">
+              <select class="select" ng-model="CutsTransitions">
+                <option class="option" value="">
+                <option class="option" value="CutsTransitions_ExtremeWideShot">Fade In
+                <option class="option" value="CutsTransitions_FadeOut">Fade Out
+                <option class="option" value="CutsTransitions_Dissolve">Dissolve
+                <option class="option" value="CutsTransitions_Wipe">Wipe
+                <option class="option" value="CutsTransitions_Cut">Cut
+                <option class="option" value="CutsTransitions_CuttingOnAction">Cutting on Action
+                <option class="option" value="CutsTransitions_CrossCut">Cross cut
+                <option class="option" value="CutsTransitions_JumpCut">Jump cut
+                <option class="option" value="CutsTransitions_MatchCut">Match cut
+                <option class="option" value="CutsTransitions_SmashCut">Smash cut
+                <option class="option" value="CutsTransitions_LCut">L Cut
+                <option class="option" value="CutsTransitions_JCut">J Cut
+                <option class="option" value="CutsTransitions_CutOnBlack">Cut on Black **
+                <option class="option" value="CutsTransitions_WhipPan">Whip Pan ***
+                <option class="option" value="CutsTransitions_WalkInfrontOftheCameraWipe">Walk infront of the camera
+                  wipe
+              </select>
+            </label>
+            </td>
+            <td>
+              <div ng-switch="cameraMovement">
+                <div ng-switch-when="CameraMovement_NoMovement">
+                  <ul>
+                    <li>No movement</li>
+                    <li>No movement</li>
+                    <li>No movement</li>
+                  </ul>
+                </div>
+                <div ng-switch-when="CameraMovement_Pan">
+                  <ul>
+                    <li>Subject moving closer</li>
+                    <li>Subject moving closer</li>
+                    <li>Subject moving closer</li>
+                  </ul>
+                </div>
+                <div ng-switch-when="CameraMovement_Tilt">
+                  <ul>
+                    <li>Subject moving Away</li>
+                    <li>Subject moving Away</li>
+                    <li>Subject moving Away</li>
+                  </ul>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <h4> 7. Frame Rates:</h4>
+            </td>
+            <td>
+              <label class="custom-select">
+              <select class="select" ng-model="frameRates">
+                <option class="option" value="">
+                <option class="option" value="frameRates_12">12
+                <option class="option" value="frameRates_24">23.976
+                <option class="option" value="frameRates_30">30
+                <option class="option" value="frameRates_60">60
+                <option class="option" value="frameRates_120">120
+              </select>
+            </label>
+            </td>
+            <td>
+              <div ng-switch="frameRates">
+                <div ng-switch-when="frameRates_12">
+                  <ul>
+                    <li>12</li>
+                  </ul>
+                </div>
+                <div ng-switch-when="frameRates_24">
+                  <ul>
+                    <li>24</li>
+                  </ul>
+                </div>
+                <div ng-switch-when="frameRates_30">
+                  <ul>
+                    <li>30</li>
+                  </ul>
+                </div>
+
+                <div ng-switch-when="frameRates_60">
+                  <ul>
+                    <li>60</li>
+                  </ul>
+                </div>
+                <div ng-switch-when="frameRates_120">
+                  <ul>
+                    <li>120</li>
+                  </ul>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <h4> 8. Focal Lengths:</h4>
+            </td>
+            <td>
+              <label class="custom-select">
+              <select class="select" ng-model="focalLengths">
+                <option class="option" value="">
+                <option class="option" value="focalLengths_16_24">16-24
+                <option class="option" value="focalLengths_35_50">35-50
+                <option class="option" value="focalLengths_70_100">70-100
+                <option class="option" value="focalLengths_Above100">Above 100
+                <option class="option" value="focalLengths_120">Above 120
+              </select>
+            </label>
+            </td>
+            <td>
+              <div ng-switch="focalLengths">
+                <div ng-switch-when="focalLengths_16_24">
+                  <ul>
+                    <li>16-24</li>
+                  </ul>
+                </div>
+                <div ng-switch-when="focalLengths_35_50">
+                  <ul>
+                    <li>Between 35 to 50</li>
+                  </ul>
+                </div>
+                <div ng-switch-when="focalLengths_70_100">
+                  <ul>
+                    <li>Between 70 to 100</li>
+                  </ul>
+                </div>
+                <div ng-switch-when="focalLengths_Above100">
+                  <ul>
+                    <li>Above 100</li>
+                  </ul>
+                </div>
+                <div ng-switch-when="focalLengths_120">
+                  <ul>
+                    <li>Above 120</li>
+                  </ul>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <h4> 9. Shutter Speed:</h4>
+            </td>
+            <td>
+              <label class="custom-select">
+              <select class="select" ng-model="shutterspeed">
+                <option class="option" value="">
+                <option class="option" value="shutterspeed_High">16-24
+                <option class="option" value="shutterspeed_Low">35-50
+                <option class="option" value="shutterspeed_180Degrees">70-100
+              </select>
+            </label>
+            </td>
+            <td>
+              <div ng-switch="shutterspeed">
+                <div ng-switch-when="focalLengths_16_24">
+                  <ul>
+                    <li>16-24</li>
+                  </ul>
+                </div>
+                <div ng-switch-when="focalLengths_35_50">
+                  <ul>
+                    <li>Between 35 to 50</li>
+                  </ul>
+                </div>
+                <div ng-switch-when="focalLengths_70_100">
+                  <ul>
+                    <li>Between 70 to 100</li>
+                  </ul>
+                </div>
+                <div ng-switch-when="focalLengths_Above100">
+                  <ul>
+                    <li>Above 100</li>
+                  </ul>
+                </div>
+                <div ng-switch-when="focalLengths_120">
+                  <ul>
+                    <li>Above 120</li>
+                  </ul>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <h4> 10. Aperture:</h4>
+            </td>
+            <td>
+              <label class="custom-select">
+              <select class="select" ng-model="aperture">
+                <option class="option" value="">
+                <option class="option" value="aperture_High">16-24
+                <option class="option" value="aperture_Low">35-50
+                <option class="option" value="aperture_180Degrees">70-100
+              </select>
+            </label>
+            </td>
+            <td>
+              <div ng-switch="shutterspeed">
+                <div ng-switch-when="focalLengths_16_24">
+                  <ul>
+                    <li>16-24</li>
+                  </ul>
+                </div>
+                <div ng-switch-when="focalLengths_35_50">
+                  <ul>
+                    <li>Between 35 to 50</li>
+                  </ul>
+                </div>
+                <div ng-switch-when="focalLengths_70_100">
+                  <ul>
+                    <li>Between 70 to 100</li>
+                  </ul>
+                </div>
+                <div ng-switch-when="focalLengths_Above100">
+                  <ul>
+                    <li>Above 100</li>
+                  </ul>
+                </div>
+                <div ng-switch-when="focalLengths_120">
+                  <ul>
+                    <li>Above 120</li>
+                  </ul>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </label>
+        <input type="submit" value="Submit">
+  </form>
+
+</body>
+
+</html>

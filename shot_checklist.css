@@ -1,0 +1,102 @@
+/* Video Explanatio - https://youtu.be/-0VuZEYIYuI */
+body{
+    background: rgb(247, 202, 201);
+     background: linear-gradient(135deg, rgba(247, 202, 201, 1) 0%, rgba(146, 168, 209, 1) 100%);
+      color:#FFF;
+      font-size: 20px;
+      padding: 10px;
+     }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0%;
+    }
+
+    input
+    {
+        min-height: 30px;
+        width: 100px;
+    }
+    
+    h2{
+        padding-top: 10px;
+        text-align: center;     
+    }   
+
+    th
+    {
+        text-align:left;
+        text-decoration: underline;
+    }
+
+    td{
+        width: 33%;
+    }
+    .custom-select {
+      position: relative;
+      display: inline-block;
+      font-size: 20px;
+      color: #888;
+      margin-top: 25px;
+    }
+    
+    .custom-select select {
+      display: block;
+      width: 250px;
+      min-height: 45px;
+      background: #888;
+      border-radius: 3px;
+      border: 2px solid #888;
+      outline: none;
+      padding: 0 20px 0 10px;
+      margin-top: 5px;
+      cursor: pointer;
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      -ms-appearance: none;
+    }
+    
+    .custom-select::after {
+      content: '';
+      border-width: 5px;
+      border-style: solid;
+      border-color: transparent;
+      border-top-color: #222;
+      display: inline-block;
+      border-radius: 2px;
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+    }
+    
+    .custom-select .selector-options {
+      list-style: none;
+      padding: 5px 0;
+      margin: 0;
+      background: #000000;
+      color: #fff;
+      border-radius: 4px;
+      z-index: 1;
+      width: 96%;
+      position: absolute;
+      left: 2%;
+      top: 35%;
+    }
+    
+    .custom-select .selector-options li {
+      height: 35px;
+      display: flex;
+      align-items: center;
+      padding: 0 15px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    
+    .custom-select .selector-options li:hover {
+      background: #ffffff;
+    }
+
+    li {
+        word-wrap: break-word;
+    }
